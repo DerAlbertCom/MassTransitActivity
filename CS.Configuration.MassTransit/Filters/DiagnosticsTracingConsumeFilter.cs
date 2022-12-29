@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using MassTransit;
 
-namespace CS.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit.Filters;
 
 public class DiagnosticsTracingConsumeFilter : IFilter<ConsumeContext>
 {
@@ -12,7 +12,7 @@ public class DiagnosticsTracingConsumeFilter : IFilter<ConsumeContext>
             var traceContext = value as string;
             if (traceContext != null)
             {
-                string operationName = GetOperationName(context);
+                var operationName = GetOperationName(context);
                 using var activity = new Activity(operationName);
                 activity.SetParentId(traceContext);
                 activity.Start();
@@ -23,8 +23,8 @@ public class DiagnosticsTracingConsumeFilter : IFilter<ConsumeContext>
 
     private string GetOperationName(ConsumeContext context)
     {
-        string? operationName = null;
-        
+        string? operationName;
+
         if (context.DestinationAddress != null)
         {
             if (context.DestinationAddress.Segments.Length == 2)
@@ -49,7 +49,6 @@ public class DiagnosticsTracingConsumeFilter : IFilter<ConsumeContext>
         {
             throw new InvalidOperationException(
                 $"Was not able to find an operation name for message id {context.MessageId}");
-            
         }
 
         return operationName.Replace(":", ".");

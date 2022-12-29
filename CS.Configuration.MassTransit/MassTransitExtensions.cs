@@ -1,3 +1,4 @@
+using CS.Configuration.MassTransit.Filters;
 using MassTransit;
 
 namespace CS.Configuration.MassTransit;

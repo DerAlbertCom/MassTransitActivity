@@ -1,7 +1,7 @@
 using MassTransit;
 using MassTransit.Configuration;
 
-namespace CS.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit.Filters;
 
 public class DiagnosticTracingPipeSpecification : IPipeSpecification<ConsumeContext>, IPipeSpecification<PublishContext>
 {

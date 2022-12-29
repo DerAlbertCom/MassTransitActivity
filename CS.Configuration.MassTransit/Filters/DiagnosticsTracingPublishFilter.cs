@@ -1,12 +1,13 @@
 using System.Diagnostics;
 using MassTransit;
 
-namespace CS.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit.Filters;
 
 public class DiagnosticsTracingPublishFilter : IFilter<PublishContext>
 {
     public void Probe(ProbeContext context)
-    { }
+    {
+    }
 
     public async Task Send(PublishContext context, IPipe<PublishContext> next)
     {

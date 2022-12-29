@@ -1,4 +1,4 @@
-namespace CS.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit.Filters;
 
 internal static class HeaderNames
 {

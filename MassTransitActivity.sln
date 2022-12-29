@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitActivity.Contrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Configuration.MassTransit", "CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj", "{6265A58A-CCB1-4C9B-BB9A-CAB445C8B8C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Configuration.MassTransit.Tests", "CS.Configuration.MassTransit.Tests\CS.Configuration.MassTransit.Tests.csproj", "{B2AEBBC3-47EF-4FC5-A016-F6A22AF53C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Configuration.MassTransit.ActiveMq", "CS.Configuration.MassTransit.ActiveMq\CS.Configuration.MassTransit.ActiveMq.csproj", "{1702FA6B-EED5-4AA4-8D78-E95C65889B06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{6265A58A-CCB1-4C9B-BB9A-CAB445C8B8C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6265A58A-CCB1-4C9B-BB9A-CAB445C8B8C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6265A58A-CCB1-4C9B-BB9A-CAB445C8B8C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2AEBBC3-47EF-4FC5-A016-F6A22AF53C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2AEBBC3-47EF-4FC5-A016-F6A22AF53C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2AEBBC3-47EF-4FC5-A016-F6A22AF53C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2AEBBC3-47EF-4FC5-A016-F6A22AF53C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1702FA6B-EED5-4AA4-8D78-E95C65889B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1702FA6B-EED5-4AA4-8D78-E95C65889B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1702FA6B-EED5-4AA4-8D78-E95C65889B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1702FA6B-EED5-4AA4-8D78-E95C65889B06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

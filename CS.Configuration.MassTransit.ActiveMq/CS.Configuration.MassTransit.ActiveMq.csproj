@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>CS.Configuration.MassTransit</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="MassTransit.ActiveMQ" Version="8.0.9"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj"/>
+    </ItemGroup>
+
+</Project>

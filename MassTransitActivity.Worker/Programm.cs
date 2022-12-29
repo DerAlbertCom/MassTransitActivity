@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using CS.Configuration.MassTransit;
 using MassTransit;
 using MassTransitActivity.Worker;
@@ -16,16 +16,7 @@ IHostBuilder CreateHostBuilder(string[] args)
         {
             services.AddMassTransit(x =>
             {
-                x.UsingActiveMq((context, cfg) =>
-                {
-                    cfg.Host("localhost", h =>
-                    {
-                        h.Username("admin");
-                        h.Password("admin");
-                    });
-                    cfg.UseDiagnosticsInstrumentation();
-                    cfg.ConfigureEndpoints(context);
-                });
+                x.UsingActiveMqCs();
                 x.AddConsumer<GettingStartedConsumer>();
             });
         }).ConfigureLogging(logBuilder =>

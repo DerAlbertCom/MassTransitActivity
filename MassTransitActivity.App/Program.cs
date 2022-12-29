@@ -15,19 +15,7 @@ IHostBuilder CreateHostBuilder(string[] args)
     return Host.CreateDefaultBuilder(args)
         .ConfigureServices((_, services) =>
         {
-            services.AddMassTransit(x =>
-            {
-                x.UsingActiveMq((context, cfg) =>
-                {
-                    cfg.Host("localhost", h =>
-                    {
-                        h.Username("admin");
-                        h.Password("admin");
-                    });
-                    cfg.UseDiagnosticsInstrumentation();
-                    cfg.ConfigureEndpoints(context);
-                });
-            });
+            services.AddMassTransit(x => { x.UsingActiveMqCs(); });
             services.AddHostedService<AppWorker>();
         }).ConfigureLogging(logBuilder =>
         {
