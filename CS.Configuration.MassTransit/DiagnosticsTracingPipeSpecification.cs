@@ -1,7 +1,7 @@
 using MassTransit;
 using MassTransit.Configuration;
 
-namespace Carmen.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit;
 
 public class DiagnosticTracingPipeSpecification : IPipeSpecification<ConsumeContext>, IPipeSpecification<PublishContext>
 {

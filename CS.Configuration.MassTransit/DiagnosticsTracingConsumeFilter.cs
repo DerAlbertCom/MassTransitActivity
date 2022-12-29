@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using MassTransit;
 
-namespace Carmen.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit;
 
 public class DiagnosticsTracingConsumeFilter : IFilter<ConsumeContext>
 {

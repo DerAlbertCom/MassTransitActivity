@@ -1,4 +1,4 @@
-namespace Carmen.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit;
 
 internal static class HeaderNames
 {

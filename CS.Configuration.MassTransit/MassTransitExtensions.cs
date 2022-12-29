@@ -1,6 +1,6 @@
 using MassTransit;
 
-namespace Carmen.Configuration.MassTransit;
+namespace CS.Configuration.MassTransit;
 
 public static class MassTransitExtensions
 {

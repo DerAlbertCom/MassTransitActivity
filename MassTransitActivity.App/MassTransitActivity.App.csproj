@@ -16,7 +16,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Carmen.Configuration.MassTransit\Carmen.Configuration.MassTransit.csproj" />
+      <ProjectReference Include="..\CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj" />
       <ProjectReference Include="..\MassTransitActivity.Contracts\MassTransitActivity.Contracts.csproj" />
     </ItemGroup>
 

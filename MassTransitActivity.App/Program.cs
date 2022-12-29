@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Carmen.Configuration.MassTransit;
+using CS.Configuration.MassTransit;
 using MassTransit;
 using MassTransitActivity.App;
 using Microsoft.Extensions.DependencyInjection;

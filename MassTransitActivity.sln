@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitActivity.Worker"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransitActivity.Contracts", "MassTransitActivity.Contracts\MassTransitActivity.Contracts.csproj", "{A3377442-F5F9-485F-8276-E58191084C87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carmen.Configuration.MassTransit", "Carmen.Configuration.MassTransit\Carmen.Configuration.MassTransit.csproj", "{6265A58A-CCB1-4C9B-BB9A-CAB445C8B8C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS.Configuration.MassTransit", "CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj", "{6265A58A-CCB1-4C9B-BB9A-CAB445C8B8C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
