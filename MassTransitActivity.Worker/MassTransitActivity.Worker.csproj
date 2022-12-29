@@ -17,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CS.Configuration.MassTransit.ActiveMq\CS.Configuration.MassTransit.ActiveMq.csproj"/>
+        <ProjectReference Include="..\CS.Configuration.MassTransit.ActiveMq\CS.Configuration.MassTransit.ActiveMq.csproj" />
         <ProjectReference Include="..\CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj" />
         <ProjectReference Include="..\MassTransitActivity.Contracts\MassTransitActivity.Contracts.csproj" />
     </ItemGroup>
