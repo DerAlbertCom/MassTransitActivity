@@ -34,9 +34,9 @@ public class SampleStateMachine : MassTransitStateMachine<SampleState>
 
     private void DeclareEvents()
     {
-        Event(() => OneStepped, x => x.CorrelateById((a) => CorrelationId()));
-        Event(() => TwoStepped, x => x.CorrelateById((a) => CorrelationId()));
-        Event(() => ThreeStepped, x => x.CorrelateById((a) => CorrelationId()));
+        Event(() => OneStepped, x => x.CorrelateById((_) => CorrelationId()));
+        Event(() => TwoStepped, x => x.CorrelateById((_) => CorrelationId()));
+        Event(() => ThreeStepped, x => x.CorrelateById((_) => CorrelationId()));
     }
 
     private Guid CorrelationId()

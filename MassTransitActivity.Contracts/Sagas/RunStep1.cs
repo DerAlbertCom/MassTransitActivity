@@ -1,24 +1,13 @@
 namespace MassTransitActivity.Contracts.Sagas;
 
-public class RunStep1
-{
-    
-}
+public record RunStep1;
 
-public record OneStepped();
-public class RunStep2
-{
-    
-}
+public record OneStepped;
 
-public record TwoStepped();
+public record RunStep2;
 
-public record RunStep3
-{
-    
-}
+public record TwoStepped;
 
-public record ThreeStepped()
-{
-    
-}
+public record RunStep3;
+
+public record ThreeStepped;

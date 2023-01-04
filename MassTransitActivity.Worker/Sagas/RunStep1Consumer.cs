@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using MassTransit;
 using MassTransitActivity.Contracts.Sagas;
 using Microsoft.Extensions.Logging;
@@ -13,6 +14,8 @@ public class RunStep1Consumer : IConsumer<RunStep1>
         _logger = logger;
     }
 
+    [SuppressMessage("ReSharper", "StructuredMessageTemplateProblem")]
+    [SuppressMessage("Reliability", "CA2017:Parameter count mismatch")]
     public async Task Consume(ConsumeContext<RunStep1> context)
     {
         _logger.LogInformation($"{nameof(RunStep1Consumer)}, Consume");
@@ -30,6 +33,8 @@ public class RunStep2Consumer : IConsumer<RunStep2>
         _logger = logger;
     }
 
+    [SuppressMessage("ReSharper", "StructuredMessageTemplateProblem")]
+    [SuppressMessage("Reliability", "CA2017:Parameter count mismatch")]
     public async Task Consume(ConsumeContext<RunStep2> context)
     {
         _logger.LogInformation($"{nameof(RunStep2Consumer)}, Consume");
@@ -47,6 +52,8 @@ public class RunStep3Consumer : IConsumer<RunStep3>
         _logger = logger;
     }
 
+    [SuppressMessage("ReSharper", "StructuredMessageTemplateProblem")]
+    [SuppressMessage("Reliability", "CA2017:Parameter count mismatch")]
     public async Task Consume(ConsumeContext<RunStep3> context)
     {
         _logger.LogInformation($"{nameof(RunStep3Consumer)}, Consume");
