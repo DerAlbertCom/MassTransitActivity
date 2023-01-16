@@ -8,11 +8,6 @@ public class DiagnosticTracingPipeSpecification :
     IPipeSpecification<PublishContext>,
     IPipeSpecification<SendContext>
 {
-    public void Apply(IPipeBuilder<SendContext> builder)
-    {
-        builder.AddFilter(new DiagnosticsTracingSendFilter());
-    }
-
     public IEnumerable<ValidationResult> Validate()
     {
         return Enumerable.Empty<ValidationResult>();
@@ -25,6 +20,11 @@ public class DiagnosticTracingPipeSpecification :
 
     public void Apply(IPipeBuilder<PublishContext> builder)
     {
-        builder.AddFilter(new DiagnosticsTracingPublishFilter());
+        builder.AddFilter(new DiagnosticsTracingPublishAndSendFilter());
+    }
+
+    public void Apply(IPipeBuilder<SendContext> builder)
+    {
+        builder.AddFilter(new DiagnosticsTracingPublishAndSendFilter());
     }
 }
