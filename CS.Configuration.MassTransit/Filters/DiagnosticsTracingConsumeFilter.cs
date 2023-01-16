@@ -7,18 +7,34 @@ public class DiagnosticsTracingConsumeFilter : IFilter<ConsumeContext>
 {
     public async Task Send(ConsumeContext context, IPipe<ConsumeContext> next)
     {
+        Activity? activity = null;
+        try
+        {
+            activity = CreateNewActivity(context, activity);
+
+            await next.Send(context);
+        }
+        finally
+        {
+            activity?.Dispose();
+        }
+    }
+
+    private Activity? CreateNewActivity(ConsumeContext context, Activity? activity)
+    {
         if (context.Headers.TryGetHeader(HeaderNames.TraceParent, out var value))
         {
             var traceContext = value as string;
             if (traceContext != null)
             {
                 var operationName = GetOperationName(context);
-                using var activity = new Activity(operationName);
+                activity = new Activity(operationName);
                 activity.SetParentId(traceContext);
                 activity.Start();
-                await next.Send(context);
             }
         }
+
+        return activity;
     }
 
     private string GetOperationName(ConsumeContext context)

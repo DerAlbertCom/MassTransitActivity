@@ -7,10 +7,10 @@
         <RootNamespace>CS.Configuration.MassTransit</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="MassTransit.ActiveMQ" Version="8.0.9"/>
+        <PackageReference Include="MassTransit.ActiveMQ" Version="8.0.10" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj"/>
+        <ProjectReference Include="..\CS.Configuration.MassTransit\CS.Configuration.MassTransit.csproj" />
     </ItemGroup>
 
 </Project>

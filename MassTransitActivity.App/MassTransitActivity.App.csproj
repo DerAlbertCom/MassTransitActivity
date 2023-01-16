@@ -9,9 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MassTransit.ActiveMQ" Version="8.0.9" />
+      <PackageReference Include="MassTransit.ActiveMQ" Version="8.0.10" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
-      <PackageReference Include="Serilog.Enrichers.Span" Version="3.0.0" />
+      <PackageReference Include="Serilog.Enrichers.Span" Version="3.1.0" />
       <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
       <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
     </ItemGroup>

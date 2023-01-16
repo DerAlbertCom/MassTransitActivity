@@ -20,7 +20,7 @@ public class GettingStartedConsumer :
     public Task Consume(ConsumeContext<GettingStarted> context)
     {
         _logger.LogInformation("Received Text: {Text}", context.Message.Value);
-        _logger.LogInformation("Received Trace: {TraceId} {ParentId}");
+        _logger.LogInformation("Received Trace: {TraceId} {SpanId} {ParentId}");
         return Task.CompletedTask;
     }
 }

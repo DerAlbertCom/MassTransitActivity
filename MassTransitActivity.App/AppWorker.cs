@@ -14,7 +14,7 @@ public class AppWorker : BackgroundService
     private readonly IBus _bus;
     private readonly ILogger<AppWorker> _logger;
 
-    public AppWorker(IBus bus, ILogger<AppWorker> logger)
+    public AppWorker(IBus bus,ILogger<AppWorker> logger)
     {
         _bus = bus;
         _logger = logger;
