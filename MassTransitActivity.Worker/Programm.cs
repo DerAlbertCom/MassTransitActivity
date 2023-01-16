@@ -33,9 +33,7 @@ IHostBuilder CreateHostBuilder(string[] args)
         {
             services.AddMassTransit(x =>
             {
-                x.UsingActiveMqCs((busContext, busConfigurator) =>
-                {
-                });
+                x.UsingActiveMqCs();
                 x.AddConsumer<GettingStartedConsumer>();
                 x.AddConsumer<RunStep1Consumer>();
                 x.AddConsumer<RunStep2Consumer>();
