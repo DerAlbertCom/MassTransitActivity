@@ -11,11 +11,13 @@ using Serilog.Enrichers.Span;
 IHostBuilder CreateHostBuilder(string[] args)
 {
     Activity.DefaultIdFormat = ActivityIdFormat.W3C;
-
     return Host.CreateDefaultBuilder(args)
         .ConfigureServices((_, services) =>
         {
-            services.AddMassTransit(x => { x.UsingActiveMqCs(); });
+            services.AddMassTransit(x =>
+            {
+                x.UsingActiveMqCs();
+            });
             services.AddHostedService<AppWorker>();
         }).ConfigureLogging(logBuilder =>
         {

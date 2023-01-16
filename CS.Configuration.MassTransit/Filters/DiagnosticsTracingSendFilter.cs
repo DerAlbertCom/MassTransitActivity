@@ -3,13 +3,9 @@ using MassTransit;
 
 namespace CS.Configuration.MassTransit.Filters;
 
-public class DiagnosticsTracingPublishFilter : IFilter<PublishContext>
+public class DiagnosticsTracingSendFilter : IFilter<SendContext>
 {
-    public void Probe(ProbeContext context)
-    {
-    }
-
-    public async Task Send(PublishContext context, IPipe<PublishContext> next)
+    public async Task Send(SendContext context, IPipe<SendContext> next)
     {
         if (Activity.Current != null)
         {
@@ -21,5 +17,9 @@ public class DiagnosticsTracingPublishFilter : IFilter<PublishContext>
         }
 
         await next.Send(context);
+    }
+
+    public void Probe(ProbeContext context)
+    {
     }
 }

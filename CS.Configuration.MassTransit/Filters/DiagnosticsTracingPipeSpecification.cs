@@ -3,8 +3,16 @@ using MassTransit.Configuration;
 
 namespace CS.Configuration.MassTransit.Filters;
 
-public class DiagnosticTracingPipeSpecification : IPipeSpecification<ConsumeContext>, IPipeSpecification<PublishContext>
+public class DiagnosticTracingPipeSpecification :
+    IPipeSpecification<ConsumeContext>,
+    IPipeSpecification<PublishContext>,
+    IPipeSpecification<SendContext>
 {
+    public void Apply(IPipeBuilder<SendContext> builder)
+    {
+        builder.AddFilter(new DiagnosticsTracingSendFilter());
+    }
+
     public IEnumerable<ValidationResult> Validate()
     {
         return Enumerable.Empty<ValidationResult>();

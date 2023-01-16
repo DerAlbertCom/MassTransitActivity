@@ -1,5 +1,4 @@
-﻿
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using MassTransit;
 using MassTransitActivity.Contracts;
@@ -14,7 +13,7 @@ public class AppWorker : BackgroundService
     private readonly IBus _bus;
     private readonly ILogger<AppWorker> _logger;
 
-    public AppWorker(IBus bus,ILogger<AppWorker> logger)
+    public AppWorker(IBus bus, ILogger<AppWorker> logger)
     {
         _bus = bus;
         _logger = logger;
@@ -30,6 +29,8 @@ public class AppWorker : BackgroundService
             counter++;
             using (var activity = new Activity("AppWorker.ExecuteAsync"))
             {
+                // why .Publish() instead of .Send() https://stackoverflow.com/questions/62713786/masstransit-endpointconvention-azure-service-bus/62714778#62714778
+
                 activity.Start();
                 _logger.LogInformation("App Trace {TraceId} {SpanId}");
                 await _bus.Publish(new GettingStarted() { Value = $"It is {DateTime.Now}" });
@@ -38,8 +39,8 @@ public class AppWorker : BackgroundService
                     await _bus.Publish(new RunStep1());
                 }
             }
+
             await Task.Delay(5000);
         }
-
     }
 }

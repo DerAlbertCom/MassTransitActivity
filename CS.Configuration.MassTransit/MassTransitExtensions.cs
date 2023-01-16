@@ -9,6 +9,8 @@ public static class MassTransitExtensions
         this IBusFactoryConfigurator cfg)
     {
         cfg.ConfigurePublish(c => { c.AddPipeSpecification(new DiagnosticTracingPipeSpecification()); });
+        cfg.ConfigureSend(c => { c.AddPipeSpecification(new DiagnosticTracingPipeSpecification()); });
+        // for consuming
         cfg.AddPipeSpecification(new DiagnosticTracingPipeSpecification());
         return cfg;
     }
