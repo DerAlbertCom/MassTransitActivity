@@ -26,6 +26,14 @@ public class DiagnosticsTracingPublishAndSendFilter : IFilter<PublishContext>, I
 
     private static void UpdateContext(SendContext context)
     {
+        // if the traceparent header is present, don't override so that trace parent is the same in all
+        // messages in a saga.
+        // masstransit passes Headers if you Publish messages over an existing Context.
+        if (context.Headers.Get<string>(HeaderNames.TraceParent) != null)
+        {
+            return;
+        }
+        
         if (Activity.Current != null)
         {
             context.Headers.Set(HeaderNames.TraceParent, Activity.Current.Id);
